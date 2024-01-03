@@ -98,14 +98,15 @@ class Artikel extends StatelessWidget {
                 itemBuilder: (context, index) => InkWell(
                   onTap: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ArtikelDetail(
-                            title: VarGlobal.data_artikel[index]['title'],
-                            deskripsi: VarGlobal.data_artikel[index]
-                                ['deskripsi'],
-                          ),
-                        ));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ArtikelDetail(
+                          title: VarGlobal.data_artikel[index]['title'],
+                          deskripsi: VarGlobal.data_artikel[index]['deskripsi'],
+                          index: index, 
+                        ),
+                      ),
+                    );
                   },
                   child: CardArtikel(
                     title: VarGlobal.data_artikel[index]['title'],
