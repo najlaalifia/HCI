@@ -6,12 +6,15 @@ import '../utils/color_select.dart';
 
 class ArtikelDetail extends StatelessWidget {
   final String title, deskripsi;
+  final int index;
 
   const ArtikelDetail(
-      {super.key, required this.title, required this.deskripsi});
+      {super.key, required this.title, required this.deskripsi, required this.index});
 
   @override
   Widget build(BuildContext context) {
+    String isi = IsiArtikel.isi_artikel[index]['isi'];
+
     return Scaffold(
       body: Stack(
         children: [
@@ -70,30 +73,7 @@ class ArtikelDetail extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    Text('''
-
-Tantrum adalah kondisi saat anak mengeluarkan emosinya dengan beragam cara. Tantrum pada anak biasanya terjadi pada anak yang masih berusia 1-4 tahun karena ketidakmampuan anak dalam menjelaskan apa yang menjadi keinginannya. 
-
-Cara Mengatasi Tantrum pada Anak
-
-1. Berikan Pelukan pada Anak
-Memberikan pelukan pada anak berguna untuk meredakan emosinya.
-
-2. Temani Anak
-Menemani anak saat mereka tantrum berguna agar mereka tidak merasa diabaikan.
-
-3. Alihkan Perhatian Anak
-Mengalihkan perhatian anak bisa dengan mengajak jalan-jalan atau memberikan makanan favoritnya.
-
-4. Hindari Hukuman Fisik
-Memberikan hukuman fisik seperti memukul anak pada saat tantrum bukanlah hal yang baik. Jenis pola asuh seperti ini justru akan memberikan contoh buruk pada anak.
-
-5. Cari Tahu Penyebabnya
-Jika tantrum pada anak sudah mereda, ajak anak berkomunikasi untuk tahu penyebabnya.
- 
-
-Jika Anda telah melakukan sejumlah cara di atas, tapi tantrum anak tetap sering terjadi dan semakin parah, segera konsultasikan dengan dokter Spesialis Anak Siloam Hospitals untuk mendapatkan penanganan tepat sesuai jenis dan penyebab tantrum.
-'''),
+                    Text(IsiArtikel.isi_artikel[index]['isi']),
                   ],
                 ),
               )
